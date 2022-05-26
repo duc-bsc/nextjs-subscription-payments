@@ -6,20 +6,21 @@ export const supabase = supabaseClient;
 export const getActiveProductsWithPrices = async (): Promise<
   ProductWithPrice[]
 > => {
-  const { data, error } = await supabase
-    .from('products')
-    .select('*, prices(*)')
-    .eq('active', true)
-    .eq('prices.active', true)
-    .order('metadata->index')
-    .order('unit_amount', { foreignTable: 'prices' });
+  // const { data, error } = await supabase
+  //   .from('products')
+  //   .select('*, prices(*)')
+  //   .eq('active', true)
+  //   .eq('prices.active', true)
+  //   .order('metadata->index')
+  //   .order('unit_amount', { foreignTable: 'prices' });
 
-  if (error) {
-    console.log(error.message);
-    throw error;
-  }
+  // if (error) {
+  //   console.log(error.message);
+  //   throw error;
+  // }
 
-  return data || [];
+  // return data || [];
+  return [];
 };
 
 export const updateUserName = async (user: User, name: string) => {
